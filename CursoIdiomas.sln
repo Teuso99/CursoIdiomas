@@ -11,13 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{A4BF12
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{8EA0CC2E-7F0A-47A9-A1BC-DA7BC88444C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoIdiomasApi", "CursoIdiomasApi\CursoIdiomasApi.csproj", "{6041156D-0416-4090-BED9-358295E1C5B0}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoIdiomas.Domain", "CursoIdiomas.Domain\CursoIdiomas.Domain.csproj", "{F5301E56-2955-4B1C-8CF2-38D04834E0CA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoIdiomas.Infrastructure", "CursoIdiomas.Infrastructure\CursoIdiomas.Infrastructure.csproj", "{0D130631-C8C1-41BE-8B9A-EC52A56C2AC9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoIdiomas.Service", "CursoIdiomas.Service\CursoIdiomas.Service.csproj", "{422FCC28-7A2A-4E5F-9A07-BEBBA2DA3A01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoIdiomas.Application", "CursoIdiomas.Application\CursoIdiomas.Application.csproj", "{B369C084-AFDB-4891-AFC4-2A20B9910A08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,18 +29,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6041156D-0416-4090-BED9-358295E1C5B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6041156D-0416-4090-BED9-358295E1C5B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6041156D-0416-4090-BED9-358295E1C5B0}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{6041156D-0416-4090-BED9-358295E1C5B0}.Debug|x64.Build.0 = Debug|Any CPU
-		{6041156D-0416-4090-BED9-358295E1C5B0}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{6041156D-0416-4090-BED9-358295E1C5B0}.Debug|x86.Build.0 = Debug|Any CPU
-		{6041156D-0416-4090-BED9-358295E1C5B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6041156D-0416-4090-BED9-358295E1C5B0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6041156D-0416-4090-BED9-358295E1C5B0}.Release|x64.ActiveCfg = Release|Any CPU
-		{6041156D-0416-4090-BED9-358295E1C5B0}.Release|x64.Build.0 = Release|Any CPU
-		{6041156D-0416-4090-BED9-358295E1C5B0}.Release|x86.ActiveCfg = Release|Any CPU
-		{6041156D-0416-4090-BED9-358295E1C5B0}.Release|x86.Build.0 = Release|Any CPU
 		{F5301E56-2955-4B1C-8CF2-38D04834E0CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F5301E56-2955-4B1C-8CF2-38D04834E0CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5301E56-2955-4B1C-8CF2-38D04834E0CA}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -77,15 +65,27 @@ Global
 		{422FCC28-7A2A-4E5F-9A07-BEBBA2DA3A01}.Release|x64.Build.0 = Release|Any CPU
 		{422FCC28-7A2A-4E5F-9A07-BEBBA2DA3A01}.Release|x86.ActiveCfg = Release|Any CPU
 		{422FCC28-7A2A-4E5F-9A07-BEBBA2DA3A01}.Release|x86.Build.0 = Release|Any CPU
+		{B369C084-AFDB-4891-AFC4-2A20B9910A08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B369C084-AFDB-4891-AFC4-2A20B9910A08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B369C084-AFDB-4891-AFC4-2A20B9910A08}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B369C084-AFDB-4891-AFC4-2A20B9910A08}.Debug|x64.Build.0 = Debug|Any CPU
+		{B369C084-AFDB-4891-AFC4-2A20B9910A08}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B369C084-AFDB-4891-AFC4-2A20B9910A08}.Debug|x86.Build.0 = Debug|Any CPU
+		{B369C084-AFDB-4891-AFC4-2A20B9910A08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B369C084-AFDB-4891-AFC4-2A20B9910A08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B369C084-AFDB-4891-AFC4-2A20B9910A08}.Release|x64.ActiveCfg = Release|Any CPU
+		{B369C084-AFDB-4891-AFC4-2A20B9910A08}.Release|x64.Build.0 = Release|Any CPU
+		{B369C084-AFDB-4891-AFC4-2A20B9910A08}.Release|x86.ActiveCfg = Release|Any CPU
+		{B369C084-AFDB-4891-AFC4-2A20B9910A08}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{6041156D-0416-4090-BED9-358295E1C5B0} = {69EDB9B3-E7D8-4449-A20E-32E89AEA2FC3}
 		{F5301E56-2955-4B1C-8CF2-38D04834E0CA} = {A4BF12CE-D655-418D-B83B-BDA352D28FFE}
 		{0D130631-C8C1-41BE-8B9A-EC52A56C2AC9} = {8EA0CC2E-7F0A-47A9-A1BC-DA7BC88444C6}
 		{422FCC28-7A2A-4E5F-9A07-BEBBA2DA3A01} = {4F76CA64-D034-4863-AA83-C8521F39394B}
+		{B369C084-AFDB-4891-AFC4-2A20B9910A08} = {69EDB9B3-E7D8-4449-A20E-32E89AEA2FC3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FC460743-2BE6-415F-A6F1-BF2FFD1BE3D4}
