@@ -1,11 +1,8 @@
 ﻿using CursoIdiomas.Domain.Entities;
 using CursoIdiomas.Domain.Interfaces;
 using CursoIdiomas.Infrastructure.Context;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CursoIdiomas.Infrastructure.Repository
 {
