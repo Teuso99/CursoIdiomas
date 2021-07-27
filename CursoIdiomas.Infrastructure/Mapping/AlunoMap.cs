@@ -19,22 +19,19 @@ namespace CursoIdiomas.Infrastructure.Mapping
             builder.HasKey(prop => prop.Id);
 
             builder.Property(prop => prop.Nome)
-                .HasConversion(prop => prop.ToString(), prop => prop)
                 .IsRequired()
                 .HasColumnName("Nome")
-                .HasColumnType("varchar(100)");
+                .HasColumnType("VARCHAR(100)");
 
-            builder.Property(prop => prop.Email)
-                .HasConversion(prop => prop.ToString(), prop => prop)
+            builder.Property(prop => prop.Matricula)
                 .IsRequired()
-                .HasColumnName("Email")
-                .HasColumnType("varchar(100)");
+                .HasColumnName("Matricula")
+                .HasColumnType("VARCHAR(100)");
 
-            builder.Property(prop => prop.Senha)
-                .HasConversion(prop => prop.ToString(), prop => prop)
+            builder.Property(prop => prop.Idade)
                 .IsRequired()
-                .HasColumnName("Senha")
-                .HasColumnType("varchar(100)");
+                .HasColumnName("Idade")
+                .HasColumnType("INT");
         }
     }
 }

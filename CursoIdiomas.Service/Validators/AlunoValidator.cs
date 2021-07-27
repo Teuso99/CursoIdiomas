@@ -16,13 +16,13 @@ namespace CursoIdiomas.Service.Validators
                 .NotEmpty().WithMessage("Informe um nome!")
                 .NotNull().WithMessage("Informe um nome!");
 
-            RuleFor(c => c.Email)
-                .NotEmpty().WithMessage("Informe um email!")
-                .NotNull().WithMessage("Informe um email!");
+            RuleFor(c => c.Matricula)
+                .NotEmpty().WithMessage("Informe uma matrícula!")
+                .NotNull().WithMessage("Informe uma matrícula!");
 
-            RuleFor(c => c.Senha)
-                .NotEmpty().WithMessage("Informe uma senha!")
-                .NotNull().WithMessage("Informe uma senha!");
+            RuleFor(c => c.Idade)
+                .NotEmpty().WithMessage("Informe uma idade!")
+                .NotNull().WithMessage("Informe uma idade!");
         }
     }
 }
