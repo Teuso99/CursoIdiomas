@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CursoIdiomas.Domain.Entities
 {
-    public class Usuario : BaseEntity
+    public class Aluno : BaseEntity
     {
         public string Nome { get; set; }
         

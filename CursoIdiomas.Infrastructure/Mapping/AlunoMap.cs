@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace CursoIdiomas.Infrastructure.Mapping
 {
-    public class UsuarioMap : IEntityTypeConfiguration<Usuario>
+    public class AlunoMap : IEntityTypeConfiguration<Aluno>
     {
-        public void Configure(EntityTypeBuilder<Usuario> builder)
+        public void Configure(EntityTypeBuilder<Aluno> builder)
         {
             builder.ToTable("Usuario");
 

@@ -16,13 +16,13 @@ namespace CursoIdiomas.Infrastructure.Context
 
         }
 
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Aluno> Alunos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Usuario>(new UsuarioMap().Configure);
+            modelBuilder.Entity<Aluno>(new AlunoMap().Configure);
         }
     }
 }

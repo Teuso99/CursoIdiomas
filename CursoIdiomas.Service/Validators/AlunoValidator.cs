@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace CursoIdiomas.Service.Validators
 {
-    public class UsuarioValidator : AbstractValidator<Usuario>
+    public class AlunoValidator : AbstractValidator<Aluno>
     {
-        public UsuarioValidator()
+        public AlunoValidator()
         {
             RuleFor(c => c.Nome)
                 .NotEmpty().WithMessage("Informe um nome!")
