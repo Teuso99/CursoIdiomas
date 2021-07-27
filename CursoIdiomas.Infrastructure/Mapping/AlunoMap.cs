@@ -8,7 +8,7 @@ namespace CursoIdiomas.Infrastructure.Mapping
     {
         public void Configure(EntityTypeBuilder<Aluno> builder)
         {
-            builder.ToTable("Usuario");
+            builder.ToTable("Aluno");
 
             builder.HasKey(prop => prop.Id);
 
