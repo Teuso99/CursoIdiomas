@@ -21,11 +21,6 @@ namespace CursoIdiomas.Infrastructure.Mapping
                 .IsRequired()
                 .HasColumnName("Turno")
                 .HasColumnType("VARCHAR(20)");
-
-            builder.Property(prop => prop.Alunos)
-                .IsRequired()
-                .HasColumnName("Alunos")
-                .HasColumnType("INT");
         }
     }
 }
