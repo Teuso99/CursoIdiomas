@@ -12,6 +12,8 @@ namespace CursoIdiomas.Infrastructure.Mapping
 
             builder.HasKey(prop => prop.Id);
 
+            builder.HasOne(prop => prop.Turma).WithMany(prop => prop.Alunos);
+
             builder.Property(prop => prop.Nome)
                 .IsRequired()
                 .HasColumnName("Nome")

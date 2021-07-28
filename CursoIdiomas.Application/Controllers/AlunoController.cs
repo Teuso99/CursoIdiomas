@@ -7,7 +7,7 @@ using System;
 namespace CursoIdiomas.Application.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class AlunoController : ControllerBase
     {
         private IBaseService<Aluno> _service;

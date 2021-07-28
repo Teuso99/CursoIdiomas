@@ -8,9 +8,11 @@ namespace CursoIdiomas.Infrastructure.Mapping
     {
         public void Configure(EntityTypeBuilder<Turma> builder)
         {
-            builder.ToTable("Turma");
+            builder.ToTable("Turmas");
 
             builder.HasKey(prop => prop.Id);
+
+            builder.HasMany(prop => prop.Alunos).WithOne(prop => prop.Turma);
 
             builder.Property(prop => prop.Nome)
                 .IsRequired()

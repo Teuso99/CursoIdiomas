@@ -35,25 +35,25 @@ namespace CursoIdiomas.Application.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] Turma aluno)
+        public IActionResult Create([FromBody] Turma turma)
         {
-            if (aluno == null)
+            if (turma == null)
             {
                 return NotFound();
             }
 
-            return Execute(() => _service.Add<TurmaValidator>(aluno).Id);
+            return Execute(() => _service.Add<TurmaValidator>(turma).Id);
         }
 
         [HttpPut]
-        public IActionResult Update([FromBody] Turma aluno)
+        public IActionResult Update([FromBody] Turma turma)
         {
-            if (aluno == null)
+            if (turma == null)
             {
                 return NotFound();
             }
 
-            return Execute(() => _service.Update<TurmaValidator>(aluno));
+            return Execute(() => _service.Update<TurmaValidator>(turma));
         }
 
         [HttpDelete("{id}")]
