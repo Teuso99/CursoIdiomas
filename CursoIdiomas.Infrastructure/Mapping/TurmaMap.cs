@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CursoIdiomas.Infrastructure.Mapping
 {
-    public class AlunoMap : IEntityTypeConfiguration<Aluno>
+    class TurmaMap : IEntityTypeConfiguration<Turma>
     {
-        public void Configure(EntityTypeBuilder<Aluno> builder)
+        public void Configure(EntityTypeBuilder<Turma> builder)
         {
-            builder.ToTable("Alunos");
+            builder.ToTable("Turma");
 
             builder.HasKey(prop => prop.Id);
 
@@ -17,14 +17,14 @@ namespace CursoIdiomas.Infrastructure.Mapping
                 .HasColumnName("Nome")
                 .HasColumnType("VARCHAR(100)");
 
-            builder.Property(prop => prop.Matricula)
+            builder.Property(prop => prop.Turno)
                 .IsRequired()
-                .HasColumnName("Matricula")
-                .HasColumnType("VARCHAR(100)");
+                .HasColumnName("Turno")
+                .HasColumnType("VARCHAR(20)");
 
-            builder.Property(prop => prop.Idade)
+            builder.Property(prop => prop.Alunos)
                 .IsRequired()
-                .HasColumnName("Idade")
+                .HasColumnName("Alunos")
                 .HasColumnType("INT");
         }
     }

@@ -12,12 +12,14 @@ namespace CursoIdiomas.Infrastructure.Context
         }
 
         public DbSet<Aluno> Alunos { get; set; }
+        public DbSet<Turma> Turmas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Aluno>(new AlunoMap().Configure);
+            modelBuilder.Entity<Turma>(new TurmaMap().Configure);
         }
     }
 }

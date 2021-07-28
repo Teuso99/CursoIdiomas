@@ -8,6 +8,8 @@
 
         public int Idade { get; set; }
 
-        //Turma
+        public int TurmaId { get; set; }
+        
+        public virtual Turma Turma { get; set; }
     }
 }
