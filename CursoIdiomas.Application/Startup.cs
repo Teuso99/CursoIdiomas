@@ -1,4 +1,8 @@
+using CursoIdiomas.Domain.Entities;
+using CursoIdiomas.Domain.Interfaces;
 using CursoIdiomas.Infrastructure.Context;
+using CursoIdiomas.Infrastructure.Repository;
+using CursoIdiomas.Service.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -27,7 +31,13 @@ namespace CursoIdiomas.Application
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CursoIdiomas.Application", Version = "v1" });
             });
+
             services.AddDbContext<SqlContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlContext")));
+
+            services.AddScoped<IBaseService<Aluno>, BaseService<Aluno>>();
+            services.AddScoped<IBaseService<Turma>, BaseService<Turma>>();
+            services.AddScoped<IBaseRepository<Aluno>, BaseRepository<Aluno>>();
+            services.AddScoped<IBaseRepository<Turma>, BaseRepository<Turma>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
