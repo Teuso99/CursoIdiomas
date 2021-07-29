@@ -1,12 +1,14 @@
 ﻿using CursoIdiomas.Domain.Entities;
 using CursoIdiomas.Domain.Interfaces;
 using CursoIdiomas.Service.Validators;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
 namespace CursoIdiomas.Application.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("api/[controller]")]
     public class AlunoController : ControllerBase
     {

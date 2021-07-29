@@ -3,13 +3,16 @@ using CursoIdiomas.Domain.Interfaces;
 using CursoIdiomas.Infrastructure.Context;
 using CursoIdiomas.Infrastructure.Repository;
 using CursoIdiomas.Service.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Text;
 
 namespace CursoIdiomas.Application
 {
@@ -36,8 +39,29 @@ namespace CursoIdiomas.Application
 
             services.AddScoped<IBaseService<Aluno>, BaseService<Aluno>>();
             services.AddScoped<IBaseService<Turma>, BaseService<Turma>>();
+            services.AddScoped<IUsuarioService, UsuarioService>();
             services.AddScoped<IBaseRepository<Aluno>, BaseRepository<Aluno>>();
             services.AddScoped<IBaseRepository<Turma>, BaseRepository<Turma>>();
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+
+            var key = Encoding.ASCII.GetBytes(Settings.Secret);
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                .AddJwtBearer(x =>
+                {
+                    x.RequireHttpsMetadata = false;
+                    x.SaveToken = true;
+                    x.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(key),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +77,8 @@ namespace CursoIdiomas.Application
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
