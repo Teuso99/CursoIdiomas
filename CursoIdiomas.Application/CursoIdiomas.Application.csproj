@@ -17,7 +17,6 @@
   <ItemGroup>
     <ProjectReference Include="..\CursoIdiomas.Domain\CursoIdiomas.Domain.csproj" />
     <ProjectReference Include="..\CursoIdiomas.Infrastructure\CursoIdiomas.Infrastructure.csproj" />
-    <ProjectReference Include="..\CursoIdiomas.Service\CursoIdiomas.Service.csproj" />
   </ItemGroup>
 
 </Project>

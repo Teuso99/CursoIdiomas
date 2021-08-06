@@ -1,5 +1,6 @@
 ﻿using CursoIdiomas.Domain.Entities;
-using CursoIdiomas.Domain.Interfaces;
+using CursoIdiomas.Domain.Interfaces.Services;
+using CursoIdiomas.Domain.Validators;
 using CursoIdiomas.Service.Validators;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

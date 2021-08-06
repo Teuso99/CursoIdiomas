@@ -1,5 +1,5 @@
 ﻿using CursoIdiomas.Domain.Entities;
-using CursoIdiomas.Domain.Interfaces;
+using CursoIdiomas.Domain.Interfaces.Repositories;
 using CursoIdiomas.Infrastructure.Context;
 using System.Collections.Generic;
 using System.Linq;

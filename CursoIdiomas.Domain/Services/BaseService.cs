@@ -5,7 +5,7 @@ using FluentValidation;
 using System;
 using System.Collections.Generic;
 
-namespace CursoIdiomas.Service.Services
+namespace CursoIdiomas.Domain.Services
 {
     public class BaseService<TEntity> : IBaseService<TEntity> where TEntity : BaseEntity
     {

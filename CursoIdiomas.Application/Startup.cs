@@ -1,5 +1,7 @@
 using CursoIdiomas.Domain.Entities;
-using CursoIdiomas.Domain.Interfaces;
+using CursoIdiomas.Domain.Interfaces.Repositories;
+using CursoIdiomas.Domain.Interfaces.Services;
+using CursoIdiomas.Domain.Services;
 using CursoIdiomas.Infrastructure.Context;
 using CursoIdiomas.Infrastructure.Repository;
 using CursoIdiomas.Service.Services;
@@ -13,7 +15,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
-    
+
 namespace CursoIdiomas.Application
 {
     public class Startup
