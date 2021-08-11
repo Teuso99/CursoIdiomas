@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace CursoIdiomas.Application.Interfaces
 {
-    public interface IBaseApplicationService<TEntity, TEntityDTO> where TEntity : BaseEntity 
+    public interface IBaseApplicationService<TEntity, TEntityDTO> where TEntity : BaseEntity
         where TEntityDTO : BaseDTO
     {
         TEntityDTO Add(TEntityDTO entity);

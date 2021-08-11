@@ -1,5 +1,4 @@
 ﻿using CursoIdiomas.Domain.Entities;
-using FluentValidation;
 using System.Collections.Generic;
 
 namespace CursoIdiomas.Domain.Interfaces.Services

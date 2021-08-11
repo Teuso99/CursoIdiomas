@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace CursoIdiomas.Application.Services
 {
-    public class BaseApplicationService<TEntity, TEntityDTO> : 
+    public class BaseApplicationService<TEntity, TEntityDTO> :
         IBaseApplicationService<TEntity, TEntityDTO> where TEntity : BaseEntity
         where TEntityDTO : BaseDTO
     {
@@ -19,30 +19,32 @@ namespace CursoIdiomas.Application.Services
             _mapper = mapper;
             _service = service;
         }
-        
-        TEntityDTO IBaseApplicationService<TEntity, TEntityDTO>.Add(TEntityDTO entity)
+
+        public TEntityDTO Add(TEntityDTO entity)
         {
-            throw new System.NotImplementedException();
+            var serviceCall = _service.Add(_mapper.Map<TEntity>(entity));
+            return _mapper.Map<TEntityDTO>(serviceCall);
         }
 
-        IEnumerable<TEntityDTO> IBaseApplicationService<TEntity, TEntityDTO>.Get()
+        public IEnumerable<TEntityDTO> Get()
         {
-            throw new System.NotImplementedException();
+            return _mapper.Map<IEnumerable<TEntityDTO>>(_service.Get());
         }
 
-        TEntityDTO IBaseApplicationService<TEntity, TEntityDTO>.GetById(int id)
+        public TEntityDTO GetById(int id)
         {
-            throw new System.NotImplementedException();
+            return _mapper.Map<TEntityDTO>(_service.GetById(id));
         }
 
-        TEntityDTO IBaseApplicationService<TEntity, TEntityDTO>.Update(TEntityDTO entity)
+        public TEntityDTO Update(TEntityDTO entity)
         {
-            throw new System.NotImplementedException();
+            var serviceCall = _service.Update(_mapper.Map<TEntity>(entity));
+            return _mapper.Map<TEntityDTO>(serviceCall);
         }
 
-        void IBaseApplicationService<TEntity, TEntityDTO>.Delete(int id)
+        public void Delete(int id)
         {
-            throw new System.NotImplementedException();
+            _service.Delete(id);
         }
     }
 }

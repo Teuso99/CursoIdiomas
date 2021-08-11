@@ -1,7 +1,6 @@
 ﻿using CursoIdiomas.Domain.Entities;
 using CursoIdiomas.Domain.Interfaces.Repositories;
 using CursoIdiomas.Domain.Interfaces.Services;
-using FluentValidation;
 using System.Collections.Generic;
 
 namespace CursoIdiomas.Domain.Services
