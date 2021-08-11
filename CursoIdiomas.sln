@@ -13,9 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CursoIdiomas.Infrastructure
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{750F2E29-489F-4ABC-9C06-5E8B45E40010}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{3EEBFD4D-7002-4463-B5AF-80E0A2821C65}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoIdiomas.Application", "CursoIdiomas.Application\CursoIdiomas.Application.csproj", "{82A7E7D1-C553-4E73-9759-911CBC09F1D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CursoIdiomas.Application", "CursoIdiomas.Application\CursoIdiomas.Application.csproj", "{82A7E7D1-C553-4E73-9759-911CBC09F1D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

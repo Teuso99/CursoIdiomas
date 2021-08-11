@@ -2,7 +2,6 @@
 using CursoIdiomas.Domain.Interfaces.Repositories;
 using CursoIdiomas.Domain.Interfaces.Services;
 using FluentValidation;
-using System;
 using System.Collections.Generic;
 
 namespace CursoIdiomas.Domain.Services
@@ -16,9 +15,9 @@ namespace CursoIdiomas.Domain.Services
             _repository = repository;
         }
 
-        public TEntity Add<TValidator>(TEntity obj) where TValidator : AbstractValidator<TEntity>
+        public TEntity Add(TEntity obj)
         {
-            Validate(obj, Activator.CreateInstance<TValidator>());
+            ValidationService<TEntity>.Validate(obj);
             _repository.Insert(obj);
             return obj;
         }
@@ -38,21 +37,11 @@ namespace CursoIdiomas.Domain.Services
             return _repository.Select(id);
         }
 
-        public TEntity Update<TValidator>(TEntity obj) where TValidator : AbstractValidator<TEntity>
+        public TEntity Update(TEntity obj)
         {
-            Validate(obj, Activator.CreateInstance<TValidator>());
+            ValidationService<TEntity>.Validate(obj);
             _repository.Update(obj);
             return obj;
-        }
-
-        private void Validate(TEntity obj, AbstractValidator<TEntity> validator)
-        {
-            if (obj == null)
-            {
-                throw new Exception("Registro não encontrado!");
-            }
-
-            validator.ValidateAndThrow(obj);
         }
     }
 }

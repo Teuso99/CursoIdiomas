@@ -6,13 +6,13 @@ namespace CursoIdiomas.Domain.Interfaces.Services
 {
     public interface IBaseService<TEntity> where TEntity : BaseEntity
     {
-        TEntity Add<TValidator>(TEntity obj) where TValidator : AbstractValidator<TEntity>;
+        TEntity Add(TEntity obj);
 
         IList<TEntity> Get();
 
         TEntity GetById(int id);
 
-        TEntity Update<TValidator>(TEntity obj) where TValidator : AbstractValidator<TEntity>;
+        TEntity Update(TEntity obj);
 
         void Delete(int id);
     }

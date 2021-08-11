@@ -9,8 +9,6 @@ namespace CursoIdiomas.Domain.Services
 {
     public static class TokenService
     {
-
-
         public static string GenerateToken(Usuario usuario)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
