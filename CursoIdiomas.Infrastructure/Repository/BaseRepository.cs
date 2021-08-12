@@ -13,8 +13,8 @@ namespace CursoIdiomas.Infrastructure.Repository
         public BaseRepository(SqlContext context)
         {
             _context = context;
-        }        
-        
+        }
+
         public void Delete(int id)
         {
             _context.Set<TEntity>().Remove(Select(id));

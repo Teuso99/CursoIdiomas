@@ -14,7 +14,5 @@ namespace CursoIdiomas.Domain.Interfaces.Repositories
         void Update(TEntity obj);
 
         void Delete(int id);
-
-        void Dispose();
     }
 }
