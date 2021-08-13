@@ -1,27 +1,19 @@
 ﻿using CursoIdiomas.Domain.Entities;
-using CursoIdiomas.Domain.Interfaces;
+using CursoIdiomas.Domain.Interfaces.Repositories;
 using CursoIdiomas.Infrastructure.Context;
 
 namespace CursoIdiomas.Infrastructure.Repository
 {
-    public class UsuarioRepository : IUsuarioRepository
-    { 
-        protected readonly SqlContext _context;
-
-        public UsuarioRepository(SqlContext context)
+    public class UsuarioRepository : BaseRepository<Usuario>, IUsuarioRepository
+    {
+        public UsuarioRepository(SqlContext context) : base(context)
         {
-            _context = context;
+
         }
-        
+
         public Usuario Authenticate(Usuario obj)
         {
             return _context.Set<Usuario>().Find(obj.Id);
-        }
-
-        public void Register(Usuario obj)
-        {
-            _context.Set<Usuario>().Add(obj);
-            _context.SaveChanges();
         }
     }
 }

@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CursoIdiomas.Infrastructure.Mapping
 {
-    class UsuarioMap : IEntityTypeConfiguration<Usuario>
+    class UsuarioMap : BaseMap<Usuario>
     {
-        public void Configure(EntityTypeBuilder<Usuario> builder)
+        public override void Configure(EntityTypeBuilder<Usuario> builder)
         {
-            builder.ToTable("Usuarios");
+            base.Configure(builder);
 
-            builder.HasKey(prop => prop.Id);
+            builder.ToTable("Usuarios");
 
             builder.Property(prop => prop.Email)
                 .IsRequired()

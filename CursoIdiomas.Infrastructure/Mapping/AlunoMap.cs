@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CursoIdiomas.Infrastructure.Mapping
 {
-    public class AlunoMap : IEntityTypeConfiguration<Aluno>
+    public class AlunoMap : BaseMap<Aluno>
     {
-        public void Configure(EntityTypeBuilder<Aluno> builder)
+        public override void Configure(EntityTypeBuilder<Aluno> builder)
         {
-            builder.ToTable("Alunos");
+            base.Configure(builder);
 
-            builder.HasKey(prop => prop.Id);
+            builder.ToTable("Alunos");
 
             builder.HasOne(prop => prop.Turma).WithMany(prop => prop.Alunos);
 

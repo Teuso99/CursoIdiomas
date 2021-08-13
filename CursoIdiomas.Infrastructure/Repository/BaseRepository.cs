@@ -1,5 +1,5 @@
 ﻿using CursoIdiomas.Domain.Entities;
-using CursoIdiomas.Domain.Interfaces;
+using CursoIdiomas.Domain.Interfaces.Repositories;
 using CursoIdiomas.Infrastructure.Context;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +13,8 @@ namespace CursoIdiomas.Infrastructure.Repository
         public BaseRepository(SqlContext context)
         {
             _context = context;
-        }        
-        
+        }
+
         public void Delete(int id)
         {
             _context.Set<TEntity>().Remove(Select(id));
