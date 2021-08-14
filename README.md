@@ -2,7 +2,7 @@
 
 
 ## Sobre
-Este repositório consiste em uma Web API utilizando .NET 5.0 e o Design Pattern DDD (Domain-Driven Development) para uma empresa fictícia que oferce cursos de idiomas.
+Este repositório consiste em uma Web API utilizando .NET 5.0 e o Design Pattern DDD (Domain-Driven Design) para uma empresa fictícia que oferce cursos de idiomas.
 
 ## Versões
 - .NET 5.0
