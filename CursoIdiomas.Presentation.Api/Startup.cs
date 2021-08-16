@@ -1,3 +1,4 @@
+using CursoIdiomas.Application.Maps;
 using CursoIdiomas.Domain.Services;
 using CursoIdiomas.Infrastructure.Context;
 using CursoIdiomas.Infrastructure.IoC;
@@ -30,6 +31,8 @@ namespace CursoIdiomas.Presentation.Api
             services.AddControllers().AddNewtonsoftJson();
 
             services.AddDbContext<SqlContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlContext")));
+
+            services.AddAutoMapper(x => x.AddProfile(new EntityMapping()));
 
             DependencyInjection.Register(services);
 

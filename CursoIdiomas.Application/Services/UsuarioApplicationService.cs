@@ -17,9 +17,9 @@ namespace CursoIdiomas.Application.Services
             _usuarioService = service;
         }
 
-        public string Authenticate(Usuario entity)
+        public string Authenticate(UsuarioDTO entity)
         {
-            return _usuarioService.Authenticate(entity);
+            return _usuarioService.Authenticate(_mapper.Map<Usuario>(entity));
         }
     }
 }

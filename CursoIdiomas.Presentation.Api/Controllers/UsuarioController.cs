@@ -16,7 +16,9 @@ namespace CursoIdiomas.Presentation.Api.Controllers
             _usuarioService = service;
         }
 
-        public IActionResult Authenticate(Usuario entity)
+        [HttpPost]
+        [Route("Authentication")]
+        public IActionResult Authenticate([FromBody] UsuarioDTO entity)
         {
             return Execute(() => _usuarioService.Authenticate(entity));
         }

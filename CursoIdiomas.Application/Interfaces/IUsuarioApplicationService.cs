@@ -5,6 +5,6 @@ namespace CursoIdiomas.Application.Interfaces
 {
     public interface IUsuarioApplicationService : IBaseApplicationService<Usuario, UsuarioDTO>
     {
-        string Authenticate(Usuario entity);
+        string Authenticate(UsuarioDTO entity);
     }
 }

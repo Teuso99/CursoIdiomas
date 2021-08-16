@@ -1,6 +1,7 @@
 ﻿using CursoIdiomas.Application.DTOs;
 using CursoIdiomas.Application.Interfaces;
 using CursoIdiomas.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
@@ -25,7 +26,7 @@ namespace CursoIdiomas.Presentation.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult GetById(int id)
         {
             if (id == 0)
             {
