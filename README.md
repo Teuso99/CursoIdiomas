@@ -26,7 +26,7 @@ dotnet restore
 dotnet build
 ```
 
-Após o build navegue até o diretório **`CursoIdiomas.Application`** e acesse o arquivo **`appsettings.json`**. Nele é possível encontrar a Connection String utilizada:
+Após o build navegue até o diretório **`CursoIdiomas.Presentation.Api`** e acesse o arquivo **`appsettings.json`**. Nele é possível encontrar a Connection String utilizada:
 
 ```json
 "ConnectionStrings": {
@@ -34,15 +34,15 @@ Após o build navegue até o diretório **`CursoIdiomas.Application`** e acesse 
   }
 ```
 
-No campo **`SqlContext`** é necessário substituir a string pela string de conexão a ser utilizada. O SGBD **DEVE SER** SQL Server.
+No campo **`SqlContext`** é necessário substituir a string pela string de conexão a ser utilizada. **O SGBD DEVE SER SQL Server**.
 
 Depois navegue até o diretório **`CursoIdiomas.Infrastructure`** e o comando para atualizar o banco de dados de acordo com as Migrations:
 
 ```
-dotnet ef --startup-project ..\CursoIdiomas.Application\CursoIdiomas.Application.csproj --project .\CursoIdiomas.Infrastructure.csproj database update
+dotnet ef --startup-project ..\CursoIdiomas.Presentation.Api\CursoIdiomas.Presentation.Api.csproj --project .\CursoIdiomas.Infrastructure.csproj database update
 ```
 
-Após atualizar o banco navegue até o diretório **`CursoIdiomas.Application`** e execute a API:
+Após atualizar o banco navegue até o diretório **`CursoIdiomas.Presentation.Api`** e execute a API:
 
 ```
 dotnet run
@@ -54,11 +54,11 @@ Agora pode acessar a API pelo navegador pela porta que a aplicação estiver esc
 
 Ao entrar nesse endereço será possível visualizar esta tela:
 
-![Index do Swagger](https://i.imgur.com/yu8STWo.png)
+![Index do Swagger](https://i.imgur.com/SDvmPtU.png)
 
-Para realizar a autenticação utilize as rotas de Usuário para registrar um Usuário e Autenticar. O método de Autenticação irá retornar um JWT para ser utilizado na aba Authenticate do Swagger.
+Para realizar a autenticação utilize as rotas de Usuário para registrar um Usuário e Autenticar. O método de Autenticação irá retornar um JWT para ser utilizado na aba Authorize do Swagger.
 
-![Autenticação pelo Swagger](https://i.imgur.com/jlzhCVL.png)
+![Autenticação pelo Swagger](https://i.imgur.com/mKvHeqV.png)
 
 Nesta aba deve ser informado o token precedido pela palavra Bearer, exemplo: **`Bearer [JWT]`**, onde **[JWT]** é a hash gerada na Autenticação.
 
